@@ -8,6 +8,9 @@ var newquote = document.getElementById('new-quote');
 
 var quoteHandel = () =>{
     currentCount = Math.floor(Math.random() * apiQuote.length); 
+    console.log(apiQuote[currentCount].author);
+    if(typeof(apiQuote[currentCount].author) == "object")
+        apiQuote[currentCount].author = "Unknow";
     quote.innerHTML = `${apiQuote[currentCount].text}`
     author.innerHTML = `${apiQuote[currentCount].author}`
 }
@@ -21,8 +24,8 @@ async function getQuote(){
     try{
         const response = await fetch(apiUrl);
         apiQuote = await response.json();
-        quoteHandel();
         Load();
+        quoteHandel();
         newquote.addEventListener('click', () => {
             quoteHandel();
         })
