@@ -5,10 +5,9 @@ var container = document.getElementById('container');
 var loader = document.getElementById('loader');
 var twitter = document.getElementById('twitter');
 var newquote = document.getElementById('new-quote');
-var currentCount = 0;
 
 var quoteHandel = () =>{
-    currentCount++;
+    currentCount = Math.floor(Math.random() * apiQuote.length); 
     quote.innerHTML = `${apiQuote[currentCount].text}`
     author.innerHTML = `${apiQuote[currentCount].author}`
 }
@@ -22,8 +21,7 @@ async function getQuote(){
     try{
         const response = await fetch(apiUrl);
         apiQuote = await response.json();
-        quote.innerHTML = `${apiQuote[currentCount].text}`
-        author.innerHTML = `${apiQuote[currentCount].author}`
+        quoteHandel();
         Load();
         newquote.addEventListener('click', () => {
             quoteHandel();
