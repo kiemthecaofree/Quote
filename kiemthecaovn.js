@@ -1,6 +1,7 @@
     var time = 91;
     const btn_get_code = document.querySelector("#btn_get_code");
     const remove_get_code = document.querySelector("#remove_get_code");
+    const game_nhan_the = document.querySelector("#game_nhan_the");
     var get_code = document.querySelector(".get_code");
     let interval;
     const getMaTheCao = async () =>{
@@ -36,5 +37,5 @@
     btn_get_code.addEventListener("click", codePro);
 
     remove_get_code.addEventListener("click", () => {
-        get_code.remove();
+        game_nhan_the.remove();
     });
