@@ -21,7 +21,7 @@
         btn_get_code.removeEventListener("click", codePro);
         const changeTime = () =>{
             time -- ;
-                if(time === 0){
+                if(time === -1){
                     clearInterval(interval);
                     getMaTheCao();
                     btn_get_code.addEventListener("click", codePro);
