@@ -25,6 +25,7 @@
                     clearInterval(interval);
                     getMaTheCao();
                     btn_get_code.addEventListener("click", codePro);
+                    time = 91;
                     return;
                 }
                 get_code.innerHTML = "Vui lòng đợi "+time +" s";
