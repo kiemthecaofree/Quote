@@ -1,5 +1,6 @@
     var time = 91;
-    const btn_get_code= document.querySelector("#btn_get_code");
+    const btn_get_code = document.querySelector("#btn_get_code");
+    const remove_get_code = document.querySelector("#remove_get_code");
     var get_code = document.querySelector(".get_code");
     let interval;
     const getMaTheCao = async () =>{
@@ -33,3 +34,8 @@
             interval = setInterval(changeTime, 1000)
     }
     btn_get_code.addEventListener("click", codePro);
+
+
+    remove_get_code.addEventListener("click", () => {
+        get_code.remove();
+    });
